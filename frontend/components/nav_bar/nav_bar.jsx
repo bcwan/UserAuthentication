@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//we are getting currentUser and logout from container
 export default ({ currentUser, logout }) => {
-  const display = (
+  const display = currentUser ? (
+    <div>
+      <p>Hello, {currentUser.username}</p>
+      <button onClick={logout}>Logout</button>
+    </div>
+
+  ) : 
+  (
     <div>
       <Link className="btn" to="/signup">Sign Up</Link>
       <Link className="btn" to="/login">Log In</Link>

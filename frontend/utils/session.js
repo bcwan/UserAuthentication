@@ -1,11 +1,13 @@
 //api_users (user controller) signup
-export const postUser = user => (
-  $.ajax({
+export const postUser = user => {
+
+  return $.ajax({
     url: '/api/users',
     method: 'POST',
     data: { user },
   })
-);
+  
+};
 
 //login
 export const postSession = user => (
